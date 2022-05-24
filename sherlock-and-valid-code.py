@@ -25,17 +25,17 @@ def isValid(s):
     once = True
     string_size = len(set(s))
     f_val, _ = Counter(freq_dict.values()).most_common(1)[0]
-    
-    
+        
     for val in freq_dict.values():
         if val == f_val :
             count+=1
-        if val - 1 == f_val and once:  
-            once = False
-            count +=1 
-        if val + 1 == f_val and once:  
-            once = False
-            count +=1 
+        else:
+            if (val - 1 == f_val or val - 1 == 0) and once: 
+                once = False
+                count +=1 
+            if val + 1 == f_val and once:  
+                once = False
+                count +=1 
             
     if count == string_size :
         print("YES")  
