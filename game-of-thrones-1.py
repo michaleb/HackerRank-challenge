@@ -13,14 +13,11 @@ from collections import defaultdict
 #
 
 def gameOfThrones(s):
-    # Write your code here
+    
     freq_dict = defaultdict(int)
     for x in s:
         freq_dict[x] += 1
-    print("LoS",len(freq_dict)) #.items())
-    print("FoS", freq_dict.values())
-    print("Sum o F", sum(freq_dict.values()))
-        
+            
     freq = 0
     for val in freq_dict.values():
         if val % 2 !=0:

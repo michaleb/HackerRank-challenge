@@ -6,9 +6,6 @@ import os
 import random
 import re
 import sys
-from collections import defaultdict, deque
-
-from numpy import empty
 
 #
 # Complete the 'stringConstruction' function below.
@@ -18,25 +15,21 @@ from numpy import empty
 #
 
 def stringConstruction(s):
-    # Write your code here
+    
     s = sorted(s)
     p = ""
    
     i = 0
     min_cost = 0
     while len(p) < len(s):
-        #p.append(s[i])
-        
+                
         if p[-1:] == s[i]:
             p = p + p[-1:]
-            #print("P-last", p[-1:])
-            #
-            # print("P-double",p)
+            
         else:
             p = p + s[i]
             min_cost += 1
-        #print("P",p)
-        #print("S",s[i+1:])
+       
         i +=1       
     
     print(min_cost)    

@@ -25,9 +25,7 @@ def isValid(s):
     once = True
     string_size = len(set(s))
     f_val, _ = Counter(freq_dict.values()).most_common(1)[0]
-    print("Val", f_val)
-    print("FREQ_VAL", freq_dict.values())
-    print("Set_len", string_size)
+    
     
     for val in freq_dict.values():
         if val == f_val :

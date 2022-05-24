@@ -16,8 +16,7 @@ from collections import defaultdict
 #
 
 def makingAnagrams(s1, s2):
-    # Write your code here
-    
+        
     freq_s1 = defaultdict(int)
     freq_s2 = defaultdict(int)
     

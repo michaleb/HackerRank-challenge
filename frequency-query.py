@@ -7,8 +7,6 @@ import random
 import re
 import sys
 
-from numpy import array_split
-
 # Complete the freqQuery function below.
 def freqQuery(queries):
     output = []
