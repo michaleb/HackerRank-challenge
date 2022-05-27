@@ -1,6 +1,5 @@
 #!/bin/python3
 
-from ast import Str
 import math
 import os
 import random
