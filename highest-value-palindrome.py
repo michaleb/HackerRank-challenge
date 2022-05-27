@@ -40,11 +40,11 @@ def highestValuePalindrome(s, n, k):
             if k>=2:
                 if s[i] != '9':
                     s[i] = '9'
-                    s[j] = '9'
+                    s[j] = s[i]
                     k-=2                 
             else:
                 if k == 1 and (n-1)%2 ==0:
-                    s[int((n-1)/2)] = '9'
+                    s[(n-1)//2] = '9'
                     break
             i+=1
             j-=1
@@ -56,19 +56,26 @@ def highestValuePalindrome(s, n, k):
         j = n-1
         
         while j > i and k > 0:
-            if s[i] != s[j]:
+            if s[i] == s[j]:
+                if k > diff_str + 1 and s[i] != '9':
+                    s[i] = '9'
+                    s[j] = s[i]
+                    k -=2
+            else:
                 if s[i] == '9':
                     s[j] = '9'
                     diff_str -= 1
                     k -=1
+                    
                 elif s[j] == '9':
                     s[i] = '9'
                     diff_str -= 1
-                    k -=1    
+                    k -=1               
+                
                 else:
                     if k >= diff_str + 1:
-                        s[j] = '9'
                         s[i] = '9'
+                        s[j] = s[i]
                         diff_str -= 1
                         k -=2
                     else:
@@ -78,13 +85,6 @@ def highestValuePalindrome(s, n, k):
                             s[i] = s[j]
                         diff_str -= 1
                         k -=1
-                 
-            else:
-                if k > diff_str + 1 and s[i] != '9':
-                    s[j] = '9'
-                    s[i] = '9'
-                    k -=2
-            
             i+=1
             j-=1
         
