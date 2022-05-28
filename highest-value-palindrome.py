@@ -63,12 +63,12 @@ def highestValuePalindrome(s, n, k):
                     k -=2
             else:
                 if s[i] == '9':
-                    s[j] = '9'
+                    s[j] = s[i]
                     diff_str -= 1
                     k -=1
                     
                 elif s[j] == '9':
-                    s[i] = '9'
+                    s[i] = s[j]
                     diff_str -= 1
                     k -=1               
                 
