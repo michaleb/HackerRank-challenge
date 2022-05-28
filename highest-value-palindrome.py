@@ -36,7 +36,7 @@ def highestValuePalindrome(s, n, k):
         i = 0
         j = n-1
         
-        while j >= i:
+        while j >= i and k > 0:
             if k>=2:
                 if s[i] != '9':
                     s[i] = '9'
