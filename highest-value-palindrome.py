@@ -45,7 +45,7 @@ def highestValuePalindrome(s, n, k):
             else:
                 if k == 1 and (n-1)%2 ==0:
                     s[(n-1)//2] = '9'
-                    break
+                    k-=1 
             i+=1
             j-=1
     
@@ -56,6 +56,10 @@ def highestValuePalindrome(s, n, k):
         j = n-1
         
         while j > i and k > 0:
+            # if characters are equal (palindrome requirement) but not max value,
+            # 2 secondary changes will be allowed only if k is greater than the 
+            # number of differences 'diff_str' in the string by at least 2 
+            
             if s[i] == s[j]:
                 if k > diff_str + 1 and s[i] != '9':
                     s[i] = '9'
@@ -73,6 +77,10 @@ def highestValuePalindrome(s, n, k):
                     k -=1               
                 
                 else:
+                    # if characters are NOT equal and NOT max value
+                    # a primary change is allowed hence k must be at
+                    # least equal to differences in string + 1 
+                    
                     if k >= diff_str + 1:
                         s[i] = '9'
                         s[j] = s[i]
@@ -89,7 +97,8 @@ def highestValuePalindrome(s, n, k):
             j-=1
         
         return maxPalindrome(s,k)
-
+    
+    # diff_str is a count of all pairs of chars, that are different, for the entire string.
     diff_str = isPalindrome(s)
     
     if diff_str > k:
