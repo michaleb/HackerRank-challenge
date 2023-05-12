@@ -25,10 +25,14 @@ def timeInWords(h, m):
                    
     mins_in_hr = 60
     phrase = [" past "," to ", " minute", " minutes"]
+
+    if h > 12:
+        h = h%12
     
-    if m == 00:
+    if m == 0:
        minute = minutedict[0]
-       return minutedict[h]+" "+minutedict[0]
+       print(minutedict[h]+" "+minutedict[0])
+       return
     
     elif m <= 30:
         joiner = phrase[0] 
