@@ -25,10 +25,16 @@ def timeInWords(h, m):
                    
     mins_in_hr = 60
     phrase = [" past "," to ", " minute", " minutes"]
+    aMoRpM = [" (AM)", " (PM)"]
 
     if h > 12:
         h = h%12
+        nDing = aMoRpM[1]
     
+    else:
+         nDing = aMoRpM[0]
+
+
     if m == 0:
        minute = minutedict[0]
        print(minutedict[h]+" "+minutedict[0])
@@ -55,7 +61,7 @@ def timeInWords(h, m):
 
     hour = minutedict[h]  
     
-    print(minute + joiner + hour)
+    print(minute + joiner + hour + nDing)
 
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
