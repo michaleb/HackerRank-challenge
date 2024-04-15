@@ -39,7 +39,7 @@ def timeInWords(h, m):
         
     else:
         joiner = phrase[1] 
-        h +=1       
+        h = h%12 + 1       
         m = mins_in_hr - m       
         
     if m == 15 or m == 30:
