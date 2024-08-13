@@ -17,7 +17,7 @@ import sys
 
 def timeInWords(h, m):
     # Write your code here
-    minutedict = {0:"o' clock", 1:'one', 2:'two', 3:'three',
+    minutedict = {0:"o'clock", 1:'one', 2:'two', 3:'three',
                4:'four', 5:'five', 6:'six', 7:'seven', 
                8:'eight', 9:'nine', 10:'ten', 11:'eleven', 
                12:'twelve', 13:'thirteen', 15:'quarter', 
@@ -37,7 +37,7 @@ def timeInWords(h, m):
 
     if m == 0:
        minute = minutedict[0]
-       print(minutedict[h]+" "+minutedict[0])
+       print(minutedict[h]+" "+minutedict[0]+""+nDing)
        return
     
     elif m <= 30:
@@ -66,9 +66,9 @@ def timeInWords(h, m):
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    h = int(input().strip())
+    h = int(input("Enter hour in 24hr format: ").strip())
 
-    m = int(input().strip())
+    m = int(input("Enter minutes: ").strip())
 
     result = timeInWords(h, m)
 
